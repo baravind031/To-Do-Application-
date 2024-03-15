@@ -16,20 +16,22 @@ This application developed using FastAPI, SQLAlchemy, and JWT for user authentic
   Read a TO-DO task (/todos/{todo_id} - GET)
   Update a TO-DO task (/todos/{todo_id} - PUT)
   Delete a TO-DO task (/todos/{todo_id} - DELETE)
-
-3 . Defines two database models using SQLAlchemy ORM:
+3. Change the MySQL url add your's database user 
+4. Defines two database models using SQLAlchemy ORM:
     i. Todo: Represents a TO-DO task with fields id, task, and content.
     ii. User_DB: Represents a user with fields id, username, email, and hashed_password.
-4. Authentication Setup
+    
+5. Authentication Setup
   i. An OAuth2 password bearer authentication scheme oauth2_scheme is created with the token URL /login.
   ii. A password hashing context pwd_context is initialized with the bcrypt hashing scheme for hashing passwords securely.
 
-5. The database session is managed using the SessionLocal object created by sessionmaker and Sessions are created and closed for each request using the get_db() dependency function 
-6. The application is run using uvicorn.run() method
-7. To run the TO-DO App use this command "uvicorn main:app --reload"
+6. The database session is managed using the SessionLocal object created by sessionmaker and Sessions are created and closed for each request using the get_db() dependency function 
+7. The application is run using uvicorn.run() method
+8. To run the TO-DO App use this command "uvicorn main:app --reload"
 
    
-8. Can generate a new secret key and replace the existing one
+9. Can generate a new secret key and replace the existing one
+10. After running sucessful enter http://127.0.0.1:8000 in browser bar, after that you can access the Swagger UI by navigating "/docs" to " http://127.0.0.1:8000/docs "
 
 
 
